@@ -100,18 +100,18 @@
 
 
 
-  <meta name="description" content="定义二叉树结点类123456789101112131415161718192021222324252627282930struct BinaryTreeNode &amp;#123;    int val;    BnaryTreeNode* lc;    BinaryTreeNode* rc;    BinaryTreeNode (int cont&amp;amp; _val, BinaryTreeNode*">
+  <meta name="description" content="定义二叉树结点类1234567struct BinaryTreeNode &amp;#123;    int val;    BnaryTreeNode* lc;    BinaryTreeNode* rc;    BinaryTreeNode (int cont&amp;amp; _val, BinaryTreeNode* _lc = nullptr, BinaryTreeNode* _rc = nullptr">
 <meta name="keywords" content="数据结构与算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二叉树的遍历（C++实现）">
 <meta property="og:url" content="http://yoursite.com/2019/06/04/二叉树的遍历（C-实现）/index.html">
 <meta property="og:site_name" content="汐">
-<meta property="og:description" content="定义二叉树结点类123456789101112131415161718192021222324252627282930struct BinaryTreeNode &amp;#123;    int val;    BnaryTreeNode* lc;    BinaryTreeNode* rc;    BinaryTreeNode (int cont&amp;amp; _val, BinaryTreeNode*">
+<meta property="og:description" content="定义二叉树结点类1234567struct BinaryTreeNode &amp;#123;    int val;    BnaryTreeNode* lc;    BinaryTreeNode* rc;    BinaryTreeNode (int cont&amp;amp; _val, BinaryTreeNode* _lc = nullptr, BinaryTreeNode* _rc = nullptr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-04T08:49:33.614Z">
+<meta property="og:updated_time" content="2019-06-04T08:54:05.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉树的遍历（C++实现）">
-<meta name="twitter:description" content="定义二叉树结点类123456789101112131415161718192021222324252627282930struct BinaryTreeNode &amp;#123;    int val;    BnaryTreeNode* lc;    BinaryTreeNode* rc;    BinaryTreeNode (int cont&amp;amp; _val, BinaryTreeNode*">
+<meta name="twitter:description" content="定义二叉树结点类1234567struct BinaryTreeNode &amp;#123;    int val;    BnaryTreeNode* lc;    BinaryTreeNode* rc;    BinaryTreeNode (int cont&amp;amp; _val, BinaryTreeNode* _lc = nullptr, BinaryTreeNode* _rc = nullptr">
 
 
 
@@ -404,7 +404,7 @@
                 
               
 
-              <time title="创建时间：2019-06-04 15:33:25 / 修改时间：16:49:33" itemprop="dateCreated datePublished" datetime="2019-06-04T15:33:25+08:00">2019-06-04</time>
+              <time title="创建时间：2019-06-04 15:33:25 / 修改时间：16:54:05" itemprop="dateCreated datePublished" datetime="2019-06-04T15:33:25+08:00">2019-06-04</time>
             
 
             
@@ -492,7 +492,15 @@
       
 
       
-        <h1 id="定义二叉树结点类"><a href="#定义二叉树结点类" class="headerlink" title="定义二叉树结点类"></a>定义二叉树结点类</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">BinaryTreeNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    BnaryTreeNode* lc;</span><br><span class="line">    BinaryTreeNode* rc;</span><br><span class="line">    BinaryTreeNode (<span class="keyword">int</span> cont&amp; _val, BinaryTreeNode* _lc = <span class="literal">nullptr</span>, BinaryTreeNode* _rc = <span class="literal">nullptr</span>) : </span><br><span class="line">    val(_val), lc(_lc), rc(_rc) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">``` </span><br><span class="line">先序遍历、中序遍历、后序遍历**访问节点**的顺序是一致的， 不同之处在于处理节点的顺序。有的遍历流程把访问到的节点暂存起来，达成某种条件后再对其进行处理（比如输出），我们约定，根节点V、左孩子L、右孩子R，那么遍历顺序可以记为：</span><br><span class="line">- 先序遍历VLR：到达一个节点后，即刻输出该节点的值，并继续遍历其左、右子树。</span><br><span class="line">- 中序遍历LVR：到达一个节点后，先将该节点暂存，遍历完其左子树后，再输出该节点的值，然后遍历其右子树。</span><br><span class="line">- 后序遍历LRV： 到达一个节点后，先将该节点暂存，遍历完其左右子树后，再输出该节点的值。</span><br><span class="line"># C++实现</span><br><span class="line">## 先序遍历（VLR）</span><br><span class="line">```C++</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pre_traversal</span> <span class="params">(BinaryTreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;BinaryTreeNode*&gt; stackNode;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">nullptr</span> || !stackNode.empty()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; root-&gt;val &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">            stackNode.push(root);</span><br><span class="line">            root = root-&gt;lc;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            root = stackNode.top();</span><br><span class="line">            stackNode.pop();</span><br><span class="line">            root = root-&gt;rc;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="定义二叉树结点类"><a href="#定义二叉树结点类" class="headerlink" title="定义二叉树结点类"></a>定义二叉树结点类</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">BinaryTreeNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    BnaryTreeNode* lc;</span><br><span class="line">    BinaryTreeNode* rc;</span><br><span class="line">    BinaryTreeNode (<span class="keyword">int</span> cont&amp; _val, BinaryTreeNode* _lc = <span class="literal">nullptr</span>, BinaryTreeNode* _rc = <span class="literal">nullptr</span>) : </span><br><span class="line">    val(_val), lc(_lc), rc(_rc) &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>先序遍历、中序遍历、后序遍历<strong>访问节点</strong>的顺序是一致的， 不同之处在于处理节点的顺序。有的遍历流程把访问到的节点暂存起来，达成某种条件后再对其进行处理（比如输出），我们约定，根节点V、左孩子L、右孩子R，那么遍历顺序可以记为：</p>
+<ul>
+<li>先序遍历VLR：到达一个节点后，即刻输出该节点的值，并继续遍历其左、右子树。</li>
+<li>中序遍历LVR：到达一个节点后，先将该节点暂存，遍历完其左子树后，再输出该节点的值，然后遍历其右子树。</li>
+<li>后序遍历LRV： 到达一个节点后，先将该节点暂存，遍历完其左右子树后，再输出该节点的值。</li>
+</ul>
+<h1 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h1><h2 id="先序遍历（VLR）"><a href="#先序遍历（VLR）" class="headerlink" title="先序遍历（VLR）"></a>先序遍历（VLR）</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pre_traversal</span> <span class="params">(BinaryTreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;BinaryTreeNode*&gt; stackNode;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">nullptr</span> || !stackNode.empty()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; root-&gt;val &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">            stackNode.push(root);</span><br><span class="line">            root = root-&gt;lc;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            root = stackNode.top();</span><br><span class="line">            stackNode.pop();</span><br><span class="line">            root = root-&gt;rc;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h2><p>与先序遍历类似，唯一区别是到达该节点时，并不直接输出该节点</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">in_traversal</span> <span class="params">(BinaryTreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;BinaryTreeNode*&gt; stackNode;</span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">nullptr</span> || !stackNode.empty()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            stackNode.push(root);</span><br><span class="line">            root = root-&gt;lc;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            root = stackNode.top();</span><br><span class="line">            stackNode.pop();</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; root-&gt;val &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">            root = root-&gt;rc;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -590,22 +598,6 @@
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/06/04/五大道/" rel="next" title="五大道">
-                <i class="fa fa-chevron-left"></i> 五大道
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
 
       
       
@@ -678,7 +670,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -697,9 +689,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -718,9 +708,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -784,7 +772,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义二叉树结点类"><span class="nav-number">1.</span> <span class="nav-text">定义二叉树结点类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#中序遍历"><span class="nav-number">1.1.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后序遍历"><span class="nav-number">1.2.</span> <span class="nav-text">后序遍历</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义二叉树结点类"><span class="nav-number">1.</span> <span class="nav-text">定义二叉树结点类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-实现"><span class="nav-number">2.</span> <span class="nav-text">C++实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#先序遍历（VLR）"><span class="nav-number">2.1.</span> <span class="nav-text">先序遍历（VLR）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中序遍历"><span class="nav-number">2.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后序遍历"><span class="nav-number">2.3.</span> <span class="nav-text">后序遍历</span></a></li></ol></li></ol></div>
             
 
           </div>
