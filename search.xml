@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>priority_queue</title>
+      <link href="/2019/06/10/priority-queue/"/>
+      <url>/2019/06/10/priority-queue/</url>
+      
+        <content type="html"><![CDATA[<h1 id="LeeteCode-347-Top-K-Frequent-Elements"><a href="#LeeteCode-347-Top-K-Frequent-Elements" class="headerlink" title="LeeteCode 347.Top K Frequent Elements"></a><a href="https://leetcode.com/problems/top-k-frequent-elements/" target="_blank" rel="noopener">LeeteCode 347.Top K Frequent Elements</a></h1><p>本题要注意的是语法上的东西: priority_queue 、pair</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; topKFrequent(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapNum;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> num : nums) &#123;</span><br><span class="line">            mapNum[num]++;</span><br><span class="line">        &#125;</span><br><span class="line">        priority_queue&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; &gt; pq;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> num : mapNum) &#123;</span><br><span class="line">            pq.push(&#123;num.second, num.first&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(k--) &#123;</span><br><span class="line">            result.push_back(pq.top().second);</span><br><span class="line">            pq.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="range-for-中-auto-后面要不要接-amp"><a href="#range-for-中-auto-后面要不要接-amp" class="headerlink" title="range for 中 auto 后面要不要接 &amp;"></a>range for 中 auto 后面要不要接 <code>&amp;</code></h2><p>如果需要修改容器中的元素，可以使用 <code>auto&amp;</code> </p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; num : nums) &#123;</span><br><span class="line">    num *= <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>下面这段code是错误的，因为它向遍历的容器中添加了元素。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> num : nums) &#123;</span><br><span class="line">    nums.push_back(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>不能在范围for循环中向vector对象添加元素。<strong>但凡使用了迭代器的循环体，都不要向迭代器所属的容器添加/删除元素</strong>。<em>reference</em>: 《C++ primer》 p99  p315  p316</p><h2 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h2><h3 id="first、second-是-pair-的-两个-public-数据成员"><a href="#first、second-是-pair-的-两个-public-数据成员" class="headerlink" title="first、second 是 pair 的 两个 public 数据成员"></a>first、second 是 pair 的 两个 public 数据成员</h3><h3 id="列表初始化"><a href="#列表初始化" class="headerlink" title="列表初始化"></a>列表初始化</h3><p>pair&lt;string, int&gt; author{“zhhp”, 1001};</p><h3 id="用make-pair生成pair对象"><a href="#用make-pair生成pair对象" class="headerlink" title="用make_pair生成pair对象"></a>用make_pair生成pair对象</h3><p>make_pair(v1, v2) 返回一个用v1, v2初始化的pair。 pair的类型从v1和v2的类型推断出来。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> DSA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> priority_queue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hash</title>
       <link href="/2019/06/05/Hash/"/>
       <url>/2019/06/05/Hash/</url>
