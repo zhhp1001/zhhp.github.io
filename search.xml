@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>subarry与subsequence</title>
+      <link href="/2019/06/10/subarry%E4%B8%8Esubsequence/"/>
+      <url>/2019/06/10/subarry%E4%B8%8Esubsequence/</url>
+      
+        <content type="html"><![CDATA[<p>subarray是截取数组中连续的一段子数组。(substring同理)</p><p>subsequence是序列中不连续的一段子序列。</p><p>[1,2,3,4,5,6]</p><p>subarray=[3,4,5];</p><p>subsequence=[2,4,5];</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> DSA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> sub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>priority_queue</title>
       <link href="/2019/06/10/priority-queue/"/>
       <url>/2019/06/10/priority-queue/</url>
