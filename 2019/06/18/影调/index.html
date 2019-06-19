@@ -100,18 +100,21 @@
 
 
 
-  <meta name="description" content="LeetCode 724. Find Pivot Index 先求数组总和sum，然后维护一个当前数组之和 cursum, 然后用sum 减去 当前遍历到的元素，判断得到的结果是否等于2*cursum 。   等于 ， 当前位置即pivot 否则， 将当前数字加到cursum中， 继续for循环 遍历数组。  1234567891011121314151617class Solution &amp;#12">
-<meta name="keywords" content="array &amp; string">
+  <meta name="description" content="黑白明暗层次变化是影像的骨架和节奏，而色彩则是附着其上的血肉和韵律。亚当斯把0255这个颜色范围分成了0X十一个区，其中0和X分别是纯黑纯白，  从全黑到全白的0区~X区是全影调幅度； I区~IX区是具有基本影调值的有效幅度； II~VIII是能够清晰地表现出影调纹理质感的纹理幅度。   影调的划分根据画面明暗基调关系划分影调对于影调，我们首先可以根据画面中的明暗基调关系（黑白关系）进行划分。在灰">
+<meta name="keywords" content="影调">
 <meta property="og:type" content="article">
-<meta property="og:title" content="array &amp; string">
-<meta property="og:url" content="http://zhhp1001.github.io/2019/06/13/Backtracking/index.html">
+<meta property="og:title" content="影调">
+<meta property="og:url" content="http://zhhp1001.github.io/2019/06/18/影调/index.html">
 <meta property="og:site_name" content="汐">
-<meta property="og:description" content="LeetCode 724. Find Pivot Index 先求数组总和sum，然后维护一个当前数组之和 cursum, 然后用sum 减去 当前遍历到的元素，判断得到的结果是否等于2*cursum 。   等于 ， 当前位置即pivot 否则， 将当前数字加到cursum中， 继续for循环 遍历数组。  1234567891011121314151617class Solution &amp;#12">
+<meta property="og:description" content="黑白明暗层次变化是影像的骨架和节奏，而色彩则是附着其上的血肉和韵律。亚当斯把0255这个颜色范围分成了0X十一个区，其中0和X分别是纯黑纯白，  从全黑到全白的0区~X区是全影调幅度； I区~IX区是具有基本影调值的有效幅度； II~VIII是能够清晰地表现出影调纹理质感的纹理幅度。   影调的划分根据画面明暗基调关系划分影调对于影调，我们首先可以根据画面中的明暗基调关系（黑白关系）进行划分。在灰">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-13T03:05:09.845Z">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/06/18/影调/%E4%BA%9A%E5%BD%93%E6%96%AF.png">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/06/18/影调/%E6%98%8E%E6%9A%97.png">
+<meta property="og:updated_time" content="2019-06-18T13:47:52.100Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="array &amp; string">
-<meta name="twitter:description" content="LeetCode 724. Find Pivot Index 先求数组总和sum，然后维护一个当前数组之和 cursum, 然后用sum 减去 当前遍历到的元素，判断得到的结果是否等于2*cursum 。   等于 ， 当前位置即pivot 否则， 将当前数字加到cursum中， 继续for循环 遍历数组。  1234567891011121314151617class Solution &amp;#12">
+<meta name="twitter:title" content="影调">
+<meta name="twitter:description" content="黑白明暗层次变化是影像的骨架和节奏，而色彩则是附着其上的血肉和韵律。亚当斯把0255这个颜色范围分成了0X十一个区，其中0和X分别是纯黑纯白，  从全黑到全白的0区~X区是全影调幅度； I区~IX区是具有基本影调值的有效幅度； II~VIII是能够清晰地表现出影调纹理质感的纹理幅度。   影调的划分根据画面明暗基调关系划分影调对于影调，我们首先可以根据画面中的明暗基调关系（黑白关系）进行划分。在灰">
+<meta name="twitter:image" content="http://zhhp1001.github.io/2019/06/18/影调/%E4%BA%9A%E5%BD%93%E6%96%AF.png">
 
 
 
@@ -119,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://zhhp1001.github.io/2019/06/13/Backtracking/">
+  <link rel="canonical" href="http://zhhp1001.github.io/2019/06/18/影调/">
 
 
 
@@ -129,7 +132,7 @@
   };
 </script>
 
-  <title>array & string | 汐</title>
+  <title>影调 | 汐</title>
   
 
 
@@ -361,7 +364,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhhp1001.github.io/2019/06/13/Backtracking/">
+    <link itemprop="mainEntityOfPage" href="http://zhhp1001.github.io/2019/06/18/影调/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhhp">
@@ -378,7 +381,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">array & string
+          <h1 class="post-title" itemprop="name headline">影调
 
               
             
@@ -404,7 +407,7 @@
                 
               
 
-              <time title="创建时间：2019-06-13 08:41:45 / 修改时间：11:05:09" itemprop="dateCreated datePublished" datetime="2019-06-13T08:41:45+08:00">2019-06-13</time>
+              <time title="创建时间：2019-06-18 21:14:57 / 修改时间：21:47:52" itemprop="dateCreated datePublished" datetime="2019-06-18T21:14:57+08:00">2019-06-18</time>
             
 
             
@@ -426,7 +429,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/DSA/" itemprop="url" rel="index"><span itemprop="name">DSA</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/摄影/" itemprop="url" rel="index"><span itemprop="name">摄影</span></a></span>
 
                 
                 
@@ -445,8 +448,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/06/13/Backtracking/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/13/Backtracking/" itemprop="commentCount"></span>
+                <a href="/2019/06/18/影调/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/18/影调/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -454,7 +457,7 @@
 
           
           
-            <span id="/2019/06/13/Backtracking/" class="leancloud_visitors" data-flag-title="array & string">
+            <span id="/2019/06/18/影调/" class="leancloud_visitors" data-flag-title="影调">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -492,13 +495,21 @@
       
 
       
-        <p>LeetCode 724. <a href="https://leetcode.com/problems/find-pivot-index/" target="_blank" rel="noopener">Find Pivot Index</a></p>
-<p>先求数组总和<code>sum</code>，然后维护一个当前数组之和 <code>cursum</code>, 然后用<code>sum</code> 减去 当前遍历到的元素，判断得到的结果是否等于2*cursum 。 </p>
+        <p>黑白明暗层次变化是影像的骨架和节奏，而色彩则是附着其上的血肉和韵律。亚当斯把0<del>255这个颜色范围分成了0</del>X十一个区，其中0和X分别是纯黑纯白，</p>
 <ul>
-<li>等于 ， 当前位置即pivot</li>
-<li>否则， 将当前数字加到cursum中， 继续for循环 遍历数组。</li>
+<li>从全黑到全白的0区~X区是<em>全影调幅度</em>；</li>
+<li>I区~IX区是具有基本影调值的<em>有效幅度</em>；</li>
+<li>II~VIII是能够清晰地表现出影调纹理质感的<em>纹理幅度</em>。
+<img src="//zhhp1001.github.io/2019/06/18/影调/%E4%BA%9A%E5%BD%93%E6%96%AF.png" alt></li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pivotIndex</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> cursum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            sum += num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sum - nums[i] == <span class="number">2</span>*cursum) &#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">            cursum += nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="影调的划分"><a href="#影调的划分" class="headerlink" title="影调的划分"></a>影调的划分</h1><h2 id="根据画面明暗基调关系划分影调"><a href="#根据画面明暗基调关系划分影调" class="headerlink" title="根据画面明暗基调关系划分影调"></a>根据画面明暗基调关系划分影调</h2><p>对于影调，我们首先可以根据画面中的明暗基调关系（黑白关系）进行划分。在灰阶的11个区域中，0代表纯黑，10代表纯白，我们可以把11级分为低明度、中明度、高明度3个级别。<br><img src="//zhhp1001.github.io/2019/06/18/影调/%E6%98%8E%E6%9A%97.png" alt></p>
+<ul>
+<li>低调（暗调），给人神秘、含蓄、肃穆、庄重、粗豪、倔强和力量的视觉感受。低调形成的基础为黑色，但照片并不是黑成一篇，必须在相应的位置辅以亮色（高光），正因为有大片的暗色调烘托陪衬，小面积的亮色就会显得突出而成为整个画面的视觉中心。</li>
+<li>中调（灰调），有平和与疏淡的感觉。</li>
+<li>高调（亮调），视觉感受为轻盈、纯洁、明快、清秀、宁静、淡雅与舒适。高调照片在浅而苏雅的影调环境中，局部少量的暗色也是必不可少的，这些黑暗影调所构成的部分往往成为画面的视觉中心。<h2 id="根据画面明度对比强弱划分影调"><a href="#根据画面明度对比强弱划分影调" class="headerlink" title="根据画面明度对比强弱划分影调"></a>根据画面明度对比强弱划分影调</h2>在一张照片中，如果明暗灰阶相差5级以上，称为<strong>长调</strong>，画面对比很强烈。相差3~5级以内，称为短调，画面对比很弱，整体层次比较平淡。</li>
+</ul>
+<p>P240</p>
+
       
     </div>
 
@@ -565,7 +576,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://zhhp1001.github.io/2019/06/13/Backtracking/" title="array & string">http://zhhp1001.github.io/2019/06/13/Backtracking/</a>
+    <a href="http://zhhp1001.github.io/2019/06/18/影调/" title="影调">http://zhhp1001.github.io/2019/06/18/影调/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -578,7 +589,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/array-string/" rel="tag"><i class="fa fa-tag"></i> array & string</a>
+            <a href="/tags/影调/" rel="tag"><i class="fa fa-tag"></i> 影调</a>
           
         </div>
       
@@ -591,8 +602,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/13/array & string/" rel="next" title="array & string">
-                <i class="fa fa-chevron-left"></i> array & string
+              <a href="/2019/06/18/从对象切割说起/" rel="next" title="从对象切割说起">
+                <i class="fa fa-chevron-left"></i> 从对象切割说起
               </a>
             
           </div>
@@ -600,10 +611,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/14/C-中的内存对齐/" rel="prev" title="C++中的内存对齐">
-                C++中的内存对齐 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -651,8 +658,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -784,6 +800,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#影调的划分"><span class="nav-number">1.</span> <span class="nav-text">影调的划分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#根据画面明暗基调关系划分影调"><span class="nav-number">1.1.</span> <span class="nav-text">根据画面明暗基调关系划分影调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据画面明度对比强弱划分影调"><span class="nav-number">1.2.</span> <span class="nav-text">根据画面明度对比强弱划分影调</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
