@@ -100,13 +100,13 @@
 
 
 
-  <meta name="description" content="递归、回溯、DFS 循环是一种特殊的递归，可以称为不需要栈的递归，或者尾递归。 好文  例子 给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了%d格式码，它就会执行类似处理。分析：首先我们会想到用4267取余，然后除以10再区域，如此循环。但这样输出的顺序不会是7,6,2,4吗？于是我们就利用递归的堆栈结构的特性：先进后出。 1234567">
+  <meta name="description" content="递归、回溯、DFS 循环是一种特殊的递归，可以称为不需要栈的递归，或者尾递归。好文  例子 给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了%d格式码，它就会执行类似处理。分析：首先我们会想到用4267取余，然后除以10再区域，如此循环。但这样输出的顺序不会是7,6,2,4吗？于是我们就利用递归的堆栈结构的特性：先进后出。 12345678">
 <meta name="keywords" content="递归">
 <meta property="og:type" content="article">
 <meta property="og:title" content="递归">
 <meta property="og:url" content="http://zhhp1001.github.io/2019/06/26/递归/index.html">
 <meta property="og:site_name" content="汐">
-<meta property="og:description" content="递归、回溯、DFS 循环是一种特殊的递归，可以称为不需要栈的递归，或者尾递归。 好文  例子 给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了%d格式码，它就会执行类似处理。分析：首先我们会想到用4267取余，然后除以10再区域，如此循环。但这样输出的顺序不会是7,6,2,4吗？于是我们就利用递归的堆栈结构的特性：先进后出。 1234567">
+<meta property="og:description" content="递归、回溯、DFS 循环是一种特殊的递归，可以称为不需要栈的递归，或者尾递归。好文  例子 给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了%d格式码，它就会执行类似处理。分析：首先我们会想到用4267取余，然后除以10再区域，如此循环。但这样输出的顺序不会是7,6,2,4吗？于是我们就利用递归的堆栈结构的特性：先进后出。 12345678">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/1.jpg">
 <meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/2.jpg">
@@ -118,10 +118,17 @@
 <meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/8.jpg">
 <meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/9.jpg">
 <meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/10.jpg">
-<meta property="og:updated_time" content="2019-06-27T13:11:19.820Z">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/1.png">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/2.png">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/3.png">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/4.png">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/5.png">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/6.png">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/06/26/递归/7.png">
+<meta property="og:updated_time" content="2019-06-28T01:01:22.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="递归">
-<meta name="twitter:description" content="递归、回溯、DFS 循环是一种特殊的递归，可以称为不需要栈的递归，或者尾递归。 好文  例子 给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了%d格式码，它就会执行类似处理。分析：首先我们会想到用4267取余，然后除以10再区域，如此循环。但这样输出的顺序不会是7,6,2,4吗？于是我们就利用递归的堆栈结构的特性：先进后出。 1234567">
+<meta name="twitter:description" content="递归、回溯、DFS 循环是一种特殊的递归，可以称为不需要栈的递归，或者尾递归。好文  例子 给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了%d格式码，它就会执行类似处理。分析：首先我们会想到用4267取余，然后除以10再区域，如此循环。但这样输出的顺序不会是7,6,2,4吗？于是我们就利用递归的堆栈结构的特性：先进后出。 12345678">
 <meta name="twitter:image" content="http://zhhp1001.github.io/2019/06/26/递归/1.jpg">
 
 
@@ -432,7 +439,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-27 21:11:19" itemprop="dateModified" datetime="2019-06-27T21:11:19+08:00">2019-06-27</time>
+                <time title="修改时间：2019-06-28 09:01:22" itemprop="dateModified" datetime="2019-06-28T09:01:22+08:00">2019-06-28</time>
               
             
           </span>
@@ -517,10 +524,9 @@
       
         <ul>
 <li>递归、回溯、DFS</li>
-<li>循环是一种特殊的递归，可以称为不需要栈的递归，或者尾递归。</li>
-<li><a href="https://blog.csdn.net/SpeedMe/article/details/21654357#commentBox" target="_blank" rel="noopener">好文</a></li>
+<li>循环是一种特殊的递归，可以称为不需要栈的递归，或者尾递归。<h1 id="好文"><a href="#好文" class="headerlink" title="好文"></a><a href="https://blog.csdn.net/SpeedMe/article/details/21654357#commentBox" target="_blank" rel="noopener">好文</a></h1></li>
 </ul>
-<p>例子 给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了%d格式码，它就会执行类似处理。<br>分析：首先我们会想到用4267取余，然后除以10再区域，如此循环。但这样输出的顺序不会是7,6,2,4吗？于是我们就利用递归的堆栈结构的特性：先进后出。</p>
+<h2 id="例子-给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了-d格式码，它就会执行类似处理。"><a href="#例子-给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了-d格式码，它就会执行类似处理。" class="headerlink" title="例子 给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了%d格式码，它就会执行类似处理。"></a>例子 给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了%d格式码，它就会执行类似处理。</h2><p>分析：首先我们会想到用4267取余，然后除以10再区域，如此循环。但这样输出的顺序不会是7,6,2,4吗？于是我们就利用递归的堆栈结构的特性：先进后出。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Recursion</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		recursion(<span class="number">4267</span>) ;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">recursion</span><span class="params">(<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> quotient ;</span><br><span class="line">		quotient = value/<span class="number">10</span> ;</span><br><span class="line">		<span class="keyword">if</span>(quotient!=<span class="number">0</span>)&#123; recursion(quotient) ;&#125;</span><br><span class="line">		System.out.println(value%<span class="number">10</span>) ;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>递归是如何帮助我们以正确的顺序打印这些字符呢？下面是这个函数的工作流程。</p>
@@ -529,7 +535,7 @@
 <li>如果quotient的值为非零，调用binary-to-ascii打印quotient当前值的各位数字</li>
 <li>接着，打印步骤1中除法运算的余数</li>
 </ol>
-<p>注意在第2个步骤中，我们需要打印的是quotient当前值的各位数字。我们所面临的问题和最初的问题完全相同，只是变量quotient的 值变小了。我们用刚刚编写的函数（把整数转换为各个数字字符并打印出来）来解决这个问题。由于quotient的值越来越小，所以递归最终会终止。<br>　　一旦你理解了递归，阅读递归函数最容易的方法不是纠缠于它的执行过程，而是<strong>相信</strong>递归函数会顺利完成它的任务。如果你的每个步骤正确无误，你的限制条件设置正确，并且每次调用之后更接近限制条件，递归函数总是能正确的完成任务。<br>　　但是，为了理解递归的工作原理，你需要追踪递归调用的执行过程，所以让我们来进行这项工作。追踪一个递归函数的执行过程的关键是理解函数中所声 明的变量是如何存储的。当函数被调用时，它的变量的空间是创建于运行时堆栈上的。以前调用的函数的变量扔保留在堆栈上，但他们被新函数的变量所掩盖，因此 是不能被访问的。<br>　　当递归函数调用自身时，情况于是如此。每进行一次新的调用，都将创建一批变量，他们将掩盖递归函数前一次调用所创建的变量。当我追踪一个递归函数的执行过程时，必须把分数不同次调用的变量区分开来，以避免混淆。<br>　　程序中的函数有两个变量：参数value和局部变量quotient。下面的一些图显示了堆栈的状态，当前可以访问的变量位于栈顶。所有其他调用的变量饰以灰色的阴影，表示他们不能被当前正在执行的函数访问。<br>假定我们以4267这个值调用递归函数。当函数刚开始执行时，堆栈的内容如下图所示：<br><img src="//zhhp1001.github.io/2019/06/26/递归/1.jpg" alt></p>
+<p>注意在第2个步骤中，我们需要打印的是quotient当前值的各位数字。我们所面临的问题和最初的问题完全相同，只是变量quotient的 值变小了。我们用刚刚编写的函数（把整数转换为各个数字字符并打印出来）来解决这个问题。由于quotient的值越来越小，所以递归最终会终止。<br>　　一旦你理解了递归，阅读递归函数最容易的方法不是纠缠于它的执行过程，而是<strong>相信</strong>递归函数会顺利完成它的任务。如果你的每个步骤正确无误，你的限制条件设置正确，并且每次调用之后更接近限制条件，递归函数总是能正确的完成任务。<br>　　但是，为了理解递归的工作原理，你需要追踪递归调用的执行过程，所以让我们来进行这项工作。追踪一个递归函数的执行过程的关键是理解函数中所声明的变量是如何存储的。当函数被调用时，它的变量的空间是创建于运行时堆栈上的。以前调用的函数的变量扔保留在堆栈上，但他们被新函数的变量所掩盖，因此是不能被访问的。<br>　　当递归函数调用自身时，情况于是如此。每进行一次新的调用，都将创建一批变量，他们将掩盖递归函数前一次调用所创建的变量。当我追踪一个递归函数的执行过程时，必须把分数不同次调用的变量区分开来，以避免混淆。<br>　　程序中的函数有两个变量：参数value和局部变量quotient。下面的一些图显示了堆栈的状态，当前可以访问的变量位于栈顶。所有其他调用的变量饰以灰色的阴影，表示他们不能被当前正在执行的函数访问。<br>假定我们以4267这个值调用递归函数。当函数刚开始执行时，堆栈的内容如下图所示：<br><img src="//zhhp1001.github.io/2019/06/26/递归/1.jpg" alt></p>
 <p>执行除法之后，堆栈的内容如下：<br><img src="//zhhp1001.github.io/2019/06/26/递归/2.jpg" alt></p>
 <p>接着，if语句判断出quotient的值非零，所以对该函数执行递归调用。当这个函数第二次被调用之初，堆栈的内容如下：<br><img src="//zhhp1001.github.io/2019/06/26/递归/3.jpg" alt></p>
 <p>堆栈上创建了一批新的变量，隐藏了前面的那批变量，除非当前这次递归调用返回，否则他们是不能被访问的。再次执行除法运算之后，堆栈的内容如下：<br><img src="//zhhp1001.github.io/2019/06/26/递归/4.jpg" alt></p>
@@ -539,6 +545,34 @@
 <p>接着函数返回，它的变量从堆栈中销毁。接着，递归函数的前一次调用重新继续执行，她所使用的是自己的变量，他们现在位于堆栈的顶部。因为它的value值是42，所以调用putchar后打印出来的数字是2。输出42：<br><img src="//zhhp1001.github.io/2019/06/26/递归/8.jpg" alt></p>
 <p>接着递归函数的这次调用也返回，它的变量也被销毁，此时位于堆栈顶部的是递归函数再前一次调用的变量。递归调用从这个位置继续执行，这次打印的数字是6。在这次调用返回之前，堆栈的内容如下,输出426：<br><img src="//zhhp1001.github.io/2019/06/26/递归/9.jpg" alt></p>
 <p>现在我们已经展开了整个递归过程，并回到该函数最初的调用。这次调用打印出数字7，也就是它的value参数除10的余数。输出4267：<br><img src="//zhhp1001.github.io/2019/06/26/递归/10.jpg" alt></p>
+<h2 id="递归的基本原理："><a href="#递归的基本原理：" class="headerlink" title="递归的基本原理："></a>递归的基本原理：</h2><p>　　１　每一次函数调用都会有一次返回．当程序流执行到某一级递归的结尾处时，它会转移到前一级递归继续执行．</p>
+<p>　　２　递归函数中，位于递归调用前的语句和各级被调函数具有相同的顺序．</p>
+<p>　　３　每一级的函数调用都有自己的局部变量．</p>
+<p>　　４　递归函数中，<strong>位于递归调用语句后的语句的执行顺序和各个被调用函数的顺序相反</strong>．</p>
+<pre><code>    　　 即位于递归函数入口前的语句，由外往里执行；位于递归函数入口后面的语句，由里往外执行。</code></pre><p>　　５　虽然每一级递归有自己的变量，但是函数代码并不会得到复制．</p>
+<p>　　６　递归函数中必须包含可以终止递归调用的语句．</p>
+<h2 id="递归算法一般用于解决三类问题："><a href="#递归算法一般用于解决三类问题：" class="headerlink" title="递归算法一般用于解决三类问题："></a>递归算法一般用于解决三类问题：</h2><p>　　(1)数据的定义是按递归定义的。(Fibonacci函数)</p>
+<p>　　(2)问题解法按递归算法实现。(回溯)</p>
+<p>　　(3)数据的结构形式是按递归定义的。(树的遍历，图的搜索)</p>
+<h1 id="To-Iterate-Human-to-Recurse-Divine"><a href="#To-Iterate-Human-to-Recurse-Divine" class="headerlink" title="To Iterate,Human; to Recurse, Divine"></a>To Iterate,Human; to Recurse, Divine</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">recur</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		count++;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"B&gt;"</span>;</span><br><span class="line">		<span class="keyword">for</span> (i; i &lt; n; i++) &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"I&gt;"</span>;</span><br><span class="line">			recur(i + <span class="number">1</span>, n);</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"R&gt;"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Solution solve;</span><br><span class="line">	solve.recur(<span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; solve.count &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面我改变recur中 n 的值， 来看看输出的变化：</p>
+<p>n = 1 : </p>
+<p><img src="//zhhp1001.github.io/2019/06/26/递归/1.png" alt="n = 1"></p>
+<p>n = 2 :</p>
+<p><img src="//zhhp1001.github.io/2019/06/26/递归/2.png" alt="n = 2"></p>
+<p>n = 3 :</p>
+<p><img src="//zhhp1001.github.io/2019/06/26/递归/3.png" alt="n = 3"></p>
+<p>n = 4 :</p>
+<p><img src="//zhhp1001.github.io/2019/06/26/递归/4.png" alt="n = 4"><br>在for循环中添加变量j </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; n; j++) &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"I&gt;"</span>;</span><br><span class="line">			recur(i + <span class="number">1</span>, n);</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"R&gt;"</span>;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+<p>n = 2 :</p>
+<p><img src="//zhhp1001.github.io/2019/06/26/递归/5.png" alt="n = 2"></p>
+<p>n = 3 :</p>
+<p><img src="//zhhp1001.github.io/2019/06/26/递归/6.png" alt="n = 3"></p>
+<p>n = 4 :</p>
+<p><img src="//zhhp1001.github.io/2019/06/26/递归/7.png" alt="n = 4"></p>
 <h1 id="Leetcode-Swap-Nodes-in-Pairs"><a href="#Leetcode-Swap-Nodes-in-Pairs" class="headerlink" title="Leetcode Swap Nodes in Pairs"></a>Leetcode <a href="https://leetcode.com/explore/learn/card/recursion-i/250/principle-of-recursion/1681/discuss/11271/Simple-implementation-with-C++" target="_blank" rel="noopener">Swap Nodes in Pairs</a></h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">swapPairs</span> <span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">nullptr</span> || head-&gt;next == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* tmp = head-&gt;next;</span><br><span class="line">        head-&gt;next = swapPairs (tmp-&gt;next);</span><br><span class="line">        tmp-&gt;next = head;</span><br><span class="line">        <span class="keyword">return</span> tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h1 id="LeetCode-Pascal’s-Triangle"><a href="#LeetCode-Pascal’s-Triangle" class="headerlink" title="LeetCode Pascal’s Triangle"></a>LeetCode <a href="https://leetcode.com/explore/learn/card/recursion-i/251/scenario-i-recurrence-relation/1659" target="_blank" rel="noopener">Pascal’s Triangle</a></h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; generate(<span class="keyword">int</span> numRows) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res(numRows);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numRows; i++) &#123;</span><br><span class="line">            res[i].resize(i + <span class="number">1</span>);</span><br><span class="line">            res[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">            res[i][i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++) &#123;</span><br><span class="line">                res[i][j] = res[i - <span class="number">1</span>][j - <span class="number">1</span>] + res[i - <span class="number">1</span>][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -872,7 +906,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Leetcode-Swap-Nodes-in-Pairs"><span class="nav-number">1.</span> <span class="nav-text">Leetcode Swap Nodes in Pairs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-Pascal’s-Triangle"><span class="nav-number">2.</span> <span class="nav-text">LeetCode Pascal’s Triangle</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#好文"><span class="nav-number">1.</span> <span class="nav-text">好文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#例子-给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了-d格式码，它就会执行类似处理。"><span class="nav-number">1.1.</span> <span class="nav-text">例子 给出一个值4267，我们需要依次产生字符‘4’，‘2’，‘6’，和‘7’。就如在printf函数中使用了%d格式码，它就会执行类似处理。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归的基本原理："><span class="nav-number">1.2.</span> <span class="nav-text">递归的基本原理：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归算法一般用于解决三类问题："><span class="nav-number">1.3.</span> <span class="nav-text">递归算法一般用于解决三类问题：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#To-Iterate-Human-to-Recurse-Divine"><span class="nav-number">2.</span> <span class="nav-text">To Iterate,Human; to Recurse, Divine</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Leetcode-Swap-Nodes-in-Pairs"><span class="nav-number">3.</span> <span class="nav-text">Leetcode Swap Nodes in Pairs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-Pascal’s-Triangle"><span class="nav-number">4.</span> <span class="nav-text">LeetCode Pascal’s Triangle</span></a></li></ol></div>
             
 
           </div>
