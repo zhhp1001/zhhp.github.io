@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="汐">
 <meta property="og:description" content="LeetCode next permutation这道题的讨论区解答很详细， 特别注意一下 reverse(nums.begin(), nums.end()) 参数是迭代器。 12345678910111213141516171819202122232425class Solution &amp;#123;public:    void nextPermutation (vector&amp;lt;int&amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-27T03:10:21.075Z">
+<meta property="og:updated_time" content="2019-07-01T01:32:51.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="permutation &amp; combination">
 <meta name="twitter:description" content="LeetCode next permutation这道题的讨论区解答很详细， 特别注意一下 reverse(nums.begin(), nums.end()) 参数是迭代器。 12345678910111213141516171819202122232425class Solution &amp;#123;public:    void nextPermutation (vector&amp;lt;int&amp;gt;">
@@ -404,12 +404,24 @@
                 
               
 
-              <time title="创建时间：2019-06-27 10:56:13 / 修改时间：11:10:21" itemprop="dateCreated datePublished" datetime="2019-06-27T10:56:13+08:00">2019-06-27</time>
+              <time title="创建时间：2019-06-27 10:56:13" itemprop="dateCreated datePublished" datetime="2019-06-27T10:56:13+08:00">2019-06-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-01 09:32:51" itemprop="dateModified" datetime="2019-07-01T09:32:51+08:00">2019-07-01</time>
               
             
           </span>
@@ -494,6 +506,14 @@
       
         <h1 id="LeetCode-next-permutation"><a href="#LeetCode-next-permutation" class="headerlink" title="LeetCode next permutation"></a>LeetCode <a href="https://leetcode.com/problems/next-permutation/discuss/13867/C%2B%2B-from-Wikipedia" target="_blank" rel="noopener">next permutation</a></h1><p>这道题的讨论区解答很详细， 特别注意一下 <code>reverse(nums.begin(), nums.end())</code> 参数是迭代器。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">nextPermutation</span> <span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">int</span> k;</span><br><span class="line">        <span class="keyword">int</span> l;</span><br><span class="line">        <span class="keyword">for</span> (k = n - <span class="number">2</span>; k &gt;= <span class="number">0</span>; k--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[k] &lt; nums[k + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (k &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            reverse (nums.begin(), nums.end());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (l = n - <span class="number">1</span>; l &gt; k; l--) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[k] &lt; nums[l]) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap (nums[k], nums[l]);</span><br><span class="line">            reverse (nums.begin() + k + <span class="number">1</span>, nums.end());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="LeetCode-Permutation"><a href="#LeetCode-Permutation" class="headerlink" title="LeetCode Permutation"></a>LeetCode <a href="https://leetcode.com/problems/permutations/discuss/18360/C%2B%2B-backtracking-and-nextPermutation" target="_blank" rel="noopener">Permutation</a></h1><h2 id="使用-vector-amp-与-第二次swap"><a href="#使用-vector-amp-与-第二次swap" class="headerlink" title="使用 vector&amp; 与 第二次swap"></a>使用 vector<int>&amp; 与 第二次swap</int></h2><p>整个过程只存在一个nums,改变一个nums的操作，就相当于整个流程中的nums都做了相同的变化，因此需要在DFS后再进行一次交换。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; permute(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt;res;</span><br><span class="line">        DFS(res, nums, 0);</span><br><span class="line">        return res;        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void DFS(vector&lt;vector&lt;int&gt;&gt;&amp; res, vector&lt;int&gt;&amp; nums, int pos)&#123;</span><br><span class="line">        if(pos == nums.size())&#123;</span><br><span class="line">            res.push_back(nums);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = pos; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            swap(nums[pos], nums[i]);</span><br><span class="line">            DFS(res, nums, pos + 1);</span><br><span class="line">            swap(nums[pos], nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用-传值-并去掉第二次的交换"><a href="#使用-传值-并去掉第二次的交换" class="headerlink" title="使用 传值 并去掉第二次的交换"></a>使用 传值 并去掉第二次的交换</h2><p>每次调用DFS都会copy一个nums，因此不用担心调用DFS会对之前的nums有影响，也就不用在调用完递归函数后再进行交换了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;res;</span><br><span class="line">        DFS(res, nums, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums, <span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(pos == nums.size())&#123;</span><br><span class="line">            res.push_back(nums);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = pos; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            swap(nums[pos], nums[i]);</span><br><span class="line">            DFS(res, nums, pos + <span class="number">1</span>);</span><br><span class="line">     </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
@@ -596,6 +616,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/07/01/剑指offer刷题计划/" rel="prev" title="剑指offer刷题计划">
+                剑指offer刷题计划 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -671,7 +695,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -749,7 +773,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -813,7 +839,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-next-permutation"><span class="nav-number">1.</span> <span class="nav-text">LeetCode next permutation</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-next-permutation"><span class="nav-number">1.</span> <span class="nav-text">LeetCode next permutation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-Permutation"><span class="nav-number">2.</span> <span class="nav-text">LeetCode Permutation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-vector-amp-与-第二次swap"><span class="nav-number">2.1.</span> <span class="nav-text">使用 vector&amp; 与 第二次swap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-传值-并去掉第二次的交换"><span class="nav-number">2.2.</span> <span class="nav-text">使用 传值 并去掉第二次的交换</span></a></li></ol></li></ol></div>
             
 
           </div>
