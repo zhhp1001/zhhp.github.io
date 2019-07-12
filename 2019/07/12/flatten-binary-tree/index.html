@@ -110,10 +110,12 @@
 <meta property="og:site_name" content="汐">
 <meta property="og:description" content="LeetCode 114. Flatten Binary Tree to Linked List 123456789101112131415class Solution &amp;#123;public:    void flatten (TreeNode* root) &amp;#123;        if (root == nullptr) &amp;#123;            return ;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-12T00:48:25.738Z">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/07/12/flatten-binary-tree/1.png">
+<meta property="og:updated_time" content="2019-07-12T00:52:17.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flatten binary tree">
 <meta name="twitter:description" content="LeetCode 114. Flatten Binary Tree to Linked List 123456789101112131415class Solution &amp;#123;public:    void flatten (TreeNode* root) &amp;#123;        if (root == nullptr) &amp;#123;            return ;">
+<meta name="twitter:image" content="http://zhhp1001.github.io/2019/07/12/flatten-binary-tree/1.png">
 
 
 
@@ -406,7 +408,7 @@
                 
               
 
-              <time title="创建时间：2019-07-12 08:30:29 / 修改时间：08:48:25" itemprop="dateCreated datePublished" datetime="2019-07-12T08:30:29+08:00">2019-07-12</time>
+              <time title="创建时间：2019-07-12 08:30:29 / 修改时间：08:52:17" itemprop="dateCreated datePublished" datetime="2019-07-12T08:30:29+08:00">2019-07-12</time>
             
 
             
@@ -497,7 +499,8 @@
         <p>LeetCode 114. <a href="https://leetcode.com/problems/flatten-binary-tree-to-linked-list/" target="_blank" rel="noopener">Flatten Binary Tree to Linked List</a></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">flatten</span> <span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        flatten (root-&gt;right);</span><br><span class="line">        flatten (root-&gt;left);</span><br><span class="line">        root-&gt;right = prev;</span><br><span class="line">        root-&gt;left = <span class="literal">nullptr</span>;</span><br><span class="line">        prev = root;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    TreeNode* prev = <span class="literal">nullptr</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>程序中DFS过程先一直向右走（ flatten (root-&gt;right);），直到遇到空节点再一直向左走（flatten (root-&gt;left);），直到遇到空节点再处理节点本身，这是典型的R - L - V 顺序的后续遍历。 处理完node 的 右子树、左子树后 再处理node， 最后让prev指向node。<br>例如<br>    1<br>   / <br>  2   5<br> / \   <br>3   4   6</p>
+<p>程序中DFS过程先一直向右走（ flatten (root-&gt;right);），直到遇到空节点再一直向左走（flatten (root-&gt;left);），直到遇到空节点再处理节点本身，这是典型的R - L - V 顺序的后续遍历。 处理完node 的 右子树、左子树后 再处理node， 最后让prev指向node。<br>例如</p>
+<p><img src="//zhhp1001.github.io/2019/07/12/flatten-binary-tree/1.png" alt></p>
 <ul>
 <li>root指针一直向右走，直到走到节点6，它的rc为空，flatten(6-&gt;right) return， 于是运行下一句 flatten(6-&gt;left), 6的lc也为空， 于是return，这样6的右、左都处理完了， 开始设置6本身。 设置好后让prev指向6…后面以此类推。</li>
 </ul>
