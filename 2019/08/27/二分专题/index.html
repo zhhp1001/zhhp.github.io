@@ -102,18 +102,22 @@
 
 
 
-  <meta name="description" content="LeetCode next permutation这道题的讨论区解答很详细， 特别注意一下 reverse(nums.begin(), nums.end()) 参数是迭代器。 12345678910111213141516171819202122232425class Solution &amp;#123;public:    void nextPermutation (vector&amp;lt;int&amp;gt;">
-<meta name="keywords" content="permutation &amp; combination">
+  <meta name="description" content="二分 ： 存在一种两段性的性质，就可以进行二分（最常见的就是单调性）流程 ：1.确定二分边界2.编写二分框架3.设计一个check性值4.判断一下区间如何更新5.如果更新方式写的是l = mid, r = mid - 1， 那么就在算mid时加上1 1. 123int mySqrt(int x) &amp;#123;    int l = 0, r = x;&amp;#125;  2. 1234567int my">
+<meta name="keywords" content="DSA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="permutation &amp; combination">
-<meta property="og:url" content="http://zhhp1001.github.io/2019/06/27/permutation + combination/index.html">
+<meta property="og:title" content="二分专题">
+<meta property="og:url" content="http://zhhp1001.github.io/2019/08/27/二分专题/index.html">
 <meta property="og:site_name" content="汐">
-<meta property="og:description" content="LeetCode next permutation这道题的讨论区解答很详细， 特别注意一下 reverse(nums.begin(), nums.end()) 参数是迭代器。 12345678910111213141516171819202122232425class Solution &amp;#123;public:    void nextPermutation (vector&amp;lt;int&amp;gt;">
+<meta property="og:description" content="二分 ： 存在一种两段性的性质，就可以进行二分（最常见的就是单调性）流程 ：1.确定二分边界2.编写二分框架3.设计一个check性值4.判断一下区间如何更新5.如果更新方式写的是l = mid, r = mid - 1， 那么就在算mid时加上1 1. 123int mySqrt(int x) &amp;#123;    int l = 0, r = x;&amp;#125;  2. 1234567int my">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-01T01:32:51.276Z">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/08/27/二分专题/1.png">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/08/27/二分专题/2.png">
+<meta property="og:image" content="http://zhhp1001.github.io/2019/08/27/二分专题/3.png">
+<meta property="og:updated_time" content="2019-08-28T11:57:10.199Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="permutation &amp; combination">
-<meta name="twitter:description" content="LeetCode next permutation这道题的讨论区解答很详细， 特别注意一下 reverse(nums.begin(), nums.end()) 参数是迭代器。 12345678910111213141516171819202122232425class Solution &amp;#123;public:    void nextPermutation (vector&amp;lt;int&amp;gt;">
+<meta name="twitter:title" content="二分专题">
+<meta name="twitter:description" content="二分 ： 存在一种两段性的性质，就可以进行二分（最常见的就是单调性）流程 ：1.确定二分边界2.编写二分框架3.设计一个check性值4.判断一下区间如何更新5.如果更新方式写的是l = mid, r = mid - 1， 那么就在算mid时加上1 1. 123int mySqrt(int x) &amp;#123;    int l = 0, r = x;&amp;#125;  2. 1234567int my">
+<meta name="twitter:image" content="http://zhhp1001.github.io/2019/08/27/二分专题/1.png">
 
 
 
@@ -121,7 +125,7 @@
 
   
   
-  <link rel="canonical" href="http://zhhp1001.github.io/2019/06/27/permutation + combination/">
+  <link rel="canonical" href="http://zhhp1001.github.io/2019/08/27/二分专题/">
 
 
 
@@ -131,7 +135,7 @@
   };
 </script>
 
-  <title>permutation & combination | 汐</title>
+  <title>二分专题 | 汐</title>
   
 
 
@@ -363,7 +367,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhhp1001.github.io/2019/06/27/permutation + combination/">
+    <link itemprop="mainEntityOfPage" href="http://zhhp1001.github.io/2019/08/27/二分专题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhhp">
@@ -380,7 +384,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">permutation & combination
+          <h1 class="post-title" itemprop="name headline">二分专题
 
               
             
@@ -406,7 +410,7 @@
                 
               
 
-              <time title="创建时间：2019-06-27 10:56:13" itemprop="dateCreated datePublished" datetime="2019-06-27T10:56:13+08:00">2019-06-27</time>
+              <time title="创建时间：2019-08-27 22:15:58" itemprop="dateCreated datePublished" datetime="2019-08-27T22:15:58+08:00">2019-08-27</time>
             
 
             
@@ -423,29 +427,11 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-01 09:32:51" itemprop="dateModified" datetime="2019-07-01T09:32:51+08:00">2019-07-01</time>
+                <time title="修改时间：2019-08-28 19:57:10" itemprop="dateModified" datetime="2019-08-28T19:57:10+08:00">2019-08-28</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/DSA/" itemprop="url" rel="index"><span itemprop="name">DSA</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -459,8 +445,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/06/27/permutation + combination/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/27/permutation + combination/" itemprop="commentCount"></span>
+                <a href="/2019/08/27/二分专题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/27/二分专题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -468,7 +454,7 @@
 
           
           
-            <span id="/2019/06/27/permutation + combination/" class="leancloud_visitors" data-flag-title="permutation & combination">
+            <span id="/2019/08/27/二分专题/" class="leancloud_visitors" data-flag-title="二分专题">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -506,14 +492,43 @@
       
 
       
-        <h1 id="LeetCode-next-permutation"><a href="#LeetCode-next-permutation" class="headerlink" title="LeetCode next permutation"></a>LeetCode <a href="https://leetcode.com/problems/next-permutation/discuss/13867/C%2B%2B-from-Wikipedia" target="_blank" rel="noopener">next permutation</a></h1><p>这道题的讨论区解答很详细， 特别注意一下 <code>reverse(nums.begin(), nums.end())</code> 参数是迭代器。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">nextPermutation</span> <span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">int</span> k;</span><br><span class="line">        <span class="keyword">int</span> l;</span><br><span class="line">        <span class="keyword">for</span> (k = n - <span class="number">2</span>; k &gt;= <span class="number">0</span>; k--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[k] &lt; nums[k + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (k &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            reverse (nums.begin(), nums.end());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (l = n - <span class="number">1</span>; l &gt; k; l--) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[k] &lt; nums[l]) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap (nums[k], nums[l]);</span><br><span class="line">            reverse (nums.begin() + k + <span class="number">1</span>, nums.end());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <p>二分 ： 存在一种两段性的性质，就可以进行二分（最常见的就是单调性）<br>流程 ：<br>1.确定二分边界<br>2.编写二分框架<br>3.设计一个check性值<br>4.判断一下区间如何更新<br>5.如果更新方式写的是l = mid, r = mid - 1， 那么就在算mid时加上1</p>
+<p>1.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="LeetCode-Permutation"><a href="#LeetCode-Permutation" class="headerlink" title="LeetCode Permutation"></a>LeetCode <a href="https://leetcode.com/problems/permutations/discuss/18360/C%2B%2B-backtracking-and-nextPermutation" target="_blank" rel="noopener">Permutation</a></h1><h2 id="使用-vector-amp-与-第二次swap"><a href="#使用-vector-amp-与-第二次swap" class="headerlink" title="使用 vector&amp; 与 第二次swap"></a>使用 vector<int>&amp; 与 第二次swap</int></h2><p>整个过程只存在一个nums,改变一个nums的操作，就相当于整个流程中的nums都做了相同的变化，因此需要在DFS后再进行一次交换。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; permute(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt;res;</span><br><span class="line">        DFS(res, nums, 0);</span><br><span class="line">        return res;        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void DFS(vector&lt;vector&lt;int&gt;&gt;&amp; res, vector&lt;int&gt;&amp; nums, int pos)&#123;</span><br><span class="line">        if(pos == nums.size())&#123;</span><br><span class="line">            res.push_back(nums);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = pos; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            swap(nums[pos], nums[i]);</span><br><span class="line">            DFS(res, nums, pos + 1);</span><br><span class="line">            swap(nums[pos], nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>2.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = x;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="使用-传值-并去掉第二次的交换"><a href="#使用-传值-并去掉第二次的交换" class="headerlink" title="使用 传值 并去掉第二次的交换"></a>使用 传值 并去掉第二次的交换</h2><p>每次调用DFS都会copy一个nums，因此不用担心调用DFS会对之前的nums有影响，也就不用在调用完递归函数后再进行交换了。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;res;</span><br><span class="line">        DFS(res, nums, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums, <span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(pos == nums.size())&#123;</span><br><span class="line">            res.push_back(nums);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = pos; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            swap(nums[pos], nums[i]);</span><br><span class="line">            DFS(res, nums, pos + <span class="number">1</span>);</span><br><span class="line">     </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>3.<br>设t为区间[l, r]中的一个元素， 那么 我们要找到一个t, 他的t * t = x</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> l = <span class="number">0</span>, r = x;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + (<span class="keyword">long</span> <span class="keyword">long</span>)r + <span class="number">1</span>&gt;&gt; <span class="number">1</span>;  <span class="comment">//当r是 最大int时， + 1 会溢出， 所以这里转换成long long</span></span><br><span class="line">        <span class="keyword">if</span> ( mid &lt;= x / mid ) l = mid;       <span class="comment">// mid * mid 可能会溢出</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>…</p>
+<h1 id="34-Find-First-and-Last-Position-of-Element-in-Sorted-Array"><a href="#34-Find-First-and-Last-Position-of-Element-in-Sorted-Array" class="headerlink" title="34. Find First and Last Position of Element in Sorted Array"></a><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/" target="_blank" rel="noopener">34. Find First and Last Position of Element in Sorted Array</a></h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; searchRange(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.empty()) <span class="keyword">return</span> &#123;<span class="number">-1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.size() - <span class="number">1</span>;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= target) r = mid;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> start = l; </span><br><span class="line">        <span class="keyword">if</span> (nums[l] != target) <span class="keyword">return</span> &#123;<span class="number">-1</span>, <span class="number">-1</span>&#125;;     <span class="comment">//二分完成得到的这个点是第一个 &gt;= 8 的点， 不一定 = 8， 所以这里判断一下</span></span><br><span class="line">        l = <span class="number">0</span>, r = nums.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &lt;= target) l = mid;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                r = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> end = l;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">return</span> &#123;start, end&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>以[5， 7， 7， 8， 8， 10]为例</p>
+<ol>
+<li>找二段性，按 t &gt;= 8 可以分成两段 （这样划分，二分查找完成后得到的是第一个&gt;= 8 的元素）</li>
+</ol>
+<p>if (nums[mid] &gt;= target)  这时， 我们要找的点（第一个 &gt;= 8 的元素）在mid的左边，也可能是mid， 所以  r = mid;</p>
+<p><img src="//zhhp1001.github.io/2019/08/27/二分专题/1.png" alt></p>
+<ol start="2">
+<li>同理， 我们要找第一个 &lt;= 8的元素， 如果nums[mid] &lt;= 8, 那么此时这个点就在mid的右侧， 也可能是 mid， 所以 l = mid; </li>
+</ol>
+<p><img src="//zhhp1001.github.io/2019/08/27/二分专题/2.png" alt></p>
+<h1 id="74-Search-a-2D-Matrix"><a href="#74-Search-a-2D-Matrix" class="headerlink" title="74. Search a 2D Matrix"></a><a href="https://leetcode.com/problems/search-a-2d-matrix/" target="_blank" rel="noopener">74. Search a 2D Matrix</a></h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">searchMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.size() == <span class="number">0</span> || matrix[<span class="number">0</span>].size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> n = matrix.size(), m = matrix[<span class="number">0</span>].size();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = m * n - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (matrix[mid / m][mid % m] &gt;= target) r = mid;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (matrix[l / m][l % m] != target) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>n = matrix.size(),  m = matrix[0].size()<br>行号  i = k / m (下取整)<br>列号  j = k mod m </p>
+<h1 id="153-Find-Minimum-in-Rotated-Sorted-Array"><a href="#153-Find-Minimum-in-Rotated-Sorted-Array" class="headerlink" title="153. Find Minimum in Rotated Sorted Array"></a><a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/" target="_blank" rel="noopener">153. Find Minimum in Rotated Sorted Array</a></h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l &lt; r)  &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &lt; nums.back()) r = mid; <span class="comment">//注意这里的 back()</span></span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                l = mid + <span class="number">1</span>;            </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> nums[l];</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="back"><a href="#back" class="headerlink" title="back()"></a>back()</h2><p>返回当前vector容器中末尾元素的引用。</p>
+<h2 id="front"><a href="#front" class="headerlink" title="front()"></a>front()</h2><p>返回当前vector容器中起始元素的引用。</p>
+<p><img src="//zhhp1001.github.io/2019/08/27/二分专题/3.png" alt></p>
+<p>找二段性的位置， 即后半部分满足， 前半部分不满足的——后半部分的元素 小于等于 末尾元素。  结合图片可知， 最小元素即黄色点 就是小于等于 末尾元素的第一个点</p>
+<h1 id="278-First-Bad-Version"><a href="#278-First-Bad-Version" class="headerlink" title="278. First Bad Version"></a><a href>278. First Bad Version</a></h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Forward declaration of isBadVersion API.</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isBadVersion</span><span class="params">(<span class="keyword">int</span> version)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstBadVersion</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = n;</span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (<span class="keyword">long</span> <span class="keyword">long</span>)l + r &gt;&gt; <span class="number">1</span>;         <span class="comment">// 当 l为最大整数时可能溢出，所以这里强制转化成long long</span></span><br><span class="line">            <span class="keyword">if</span> (isBadVersion(mid)) r = mid;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="162-Find-Peak-Element"><a href="#162-Find-Peak-Element" class="headerlink" title="162. Find Peak Element"></a><a href="https://leetcode.com/problems/find-peak-element/" target="_blank" rel="noopener">162. Find Peak Element</a></h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findPeakElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt; nums[mid + <span class="number">1</span>]) r = mid;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="287-Find-the-Duplicate-Number"><a href="#287-Find-the-Duplicate-Number" class="headerlink" title="287. Find the Duplicate Number"></a><a href="https://leetcode.com/problems/find-the-duplicate-number/" target="_blank" rel="noopener">287. Find the Duplicate Number</a></h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">1</span>, r = nums.size() - <span class="number">1</span>;        <span class="comment">//抽屉原理， 对1~n二分</span></span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> x : nums)</span><br><span class="line">                <span class="keyword">if</span> (x &gt;= l &amp;&amp; x &lt;= mid)</span><br><span class="line">                    cnt++;</span><br><span class="line">            <span class="keyword">if</span> (cnt &gt; mid - l + <span class="number">1</span>) r = mid;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -582,7 +597,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://zhhp1001.github.io/2019/06/27/permutation + combination/" title="permutation & combination">http://zhhp1001.github.io/2019/06/27/permutation + combination/</a>
+    <a href="http://zhhp1001.github.io/2019/08/27/二分专题/" title="二分专题">http://zhhp1001.github.io/2019/08/27/二分专题/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -595,7 +610,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/permutation-combination/" rel="tag"><i class="fa fa-tag"></i> permutation & combination</a>
+            <a href="/tags/DSA/" rel="tag"><i class="fa fa-tag"></i> DSA</a>
           
         </div>
       
@@ -608,8 +623,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/27/static/" rel="next" title="static">
-                <i class="fa fa-chevron-left"></i> static
+              <a href="/2019/08/26/dfs与回溯/" rel="next" title="dfs与回溯">
+                <i class="fa fa-chevron-left"></i> dfs与回溯
               </a>
             
           </div>
@@ -617,10 +632,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/01/剑指offer刷题计划/" rel="prev" title="剑指offer刷题计划">
-                剑指offer刷题计划 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -869,7 +880,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-next-permutation"><span class="nav-number">1.</span> <span class="nav-text">LeetCode next permutation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-Permutation"><span class="nav-number">2.</span> <span class="nav-text">LeetCode Permutation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-vector-amp-与-第二次swap"><span class="nav-number">2.1.</span> <span class="nav-text">使用 vector&amp; 与 第二次swap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-传值-并去掉第二次的交换"><span class="nav-number">2.2.</span> <span class="nav-text">使用 传值 并去掉第二次的交换</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#34-Find-First-and-Last-Position-of-Element-in-Sorted-Array"><span class="nav-number">1.</span> <span class="nav-text">34. Find First and Last Position of Element in Sorted Array</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#74-Search-a-2D-Matrix"><span class="nav-number">2.</span> <span class="nav-text">74. Search a 2D Matrix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#153-Find-Minimum-in-Rotated-Sorted-Array"><span class="nav-number">3.</span> <span class="nav-text">153. Find Minimum in Rotated Sorted Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#back"><span class="nav-number">3.1.</span> <span class="nav-text">back()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#front"><span class="nav-number">3.2.</span> <span class="nav-text">front()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#278-First-Bad-Version"><span class="nav-number">4.</span> <span class="nav-text">278. First Bad Version</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#162-Find-Peak-Element"><span class="nav-number">5.</span> <span class="nav-text">162. Find Peak Element</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#287-Find-the-Duplicate-Number"><span class="nav-number">6.</span> <span class="nav-text">287. Find the Duplicate Number</span></a></li></ol></div>
             
 
           </div>
